@@ -61,14 +61,16 @@ public class BaseballGame {
         if (input.matches("^[0-9]*$")) {
             for (int i = 0; i < input.length(); i++) {
                 Attack.add((int) input.charAt(i) - '0');
+                //0이 들어왔을때 false
                 if(Attack.contains(0)){
                     System.out.println("올바르지 않은 입력값입니다.");
                     Attack.clear();
+                    return false;
                 }
             }
         }else System.out.println("올바르지 않은 입력값입니다.");
 
-        //중복된 값 검사 : distinct로 중복요소 제거 => 들어온 값의 크기와 다를 시 false
+        //중복된 값 검사 : distinct로 중복요소 제거 => 난이도와 같을 시 true
         if (Attack.stream().distinct().count() == level) {
             return true;
         }
