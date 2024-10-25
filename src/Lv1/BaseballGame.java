@@ -83,6 +83,8 @@ public class BaseballGame {
     }
 
     private void countStrikeAndBall(List<Integer> random, List<Integer> attackNum) {
+        ball = 0;
+        strike = 0;
         //스트라이크 볼 카운트
         for (int i = 0; i < random.size(); i++) {
             for (int j = 0; j < attackNum.size(); j++) {
