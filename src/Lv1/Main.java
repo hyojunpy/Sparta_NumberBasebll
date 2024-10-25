@@ -30,9 +30,6 @@ public class Main {
                 //1,2,3 이외에 다른 입력값 입력시
                 default -> System.out.println("올바른 숫자를 입력해주세요!");
             }
-
         }
     }
-
-
 }

@@ -44,18 +44,22 @@ public class BaseballGame {
         System.out.println("< 게임을 시작합니다 >");
         while (true) {
             System.out.println("숫자를 입력하세요 : ");
+            System.out.println(randomNum);
             input = sc.nextLine();
+            //게임 진행 횟수 추가
+            count++;
             // 게밍 진행 횟수 초기화
             if (validateInput(input)) {
-                //게임 진행 횟수 추가
-                count++;
                 //스트라이크,볼 개수 계산 다 맞췄을시 정답 출력 후 종료
                 countStrikeAndBall(randomNum, Attack);
 
                 if (strike == level) {
                     System.out.println("정답입니다 축하드립니다.");
                     break;
-                } else BaseballGameDisplay.displayHint(strike, ball);
+                } else if(strike == 0 && ball == 0) {
+                    System.out.println("아웃");
+                }
+                else  BaseballGameDisplay.displayHint(strike, ball);
                 Attack.clear();
             }
         }
